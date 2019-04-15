@@ -2,7 +2,7 @@ import React from 'react';
 
 function FriendsWhoPaid(props) {
   const friendslist = props.friends.map((friend) =>
-    <li>{friend.name}: {friend.paid}</li>
+    <li>{friend.name}: {friend.payt}</li>
   );
   return (
     <ul>{friendslist}</ul>

@@ -6,10 +6,9 @@ import FriendsWhoPaid from './FriendsWhoPaid';
 function InformationTable(props) {
   return (
     <div className='informationtable'>
-      <div className='eventandtotal'>
-        <EventName event={props.event} /> |
-        <Total friends={props.friends}/>
-      </div>
+      <p className='eventandtotal'>
+        <EventName event={props.event} /> | <Total friends={props.friends}/>
+      </p>
       <FriendsWhoPaid friends={props.friends}/>
     </div>
   );

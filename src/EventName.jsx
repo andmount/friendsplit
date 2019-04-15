@@ -1,4 +1,6 @@
 
 function EventName(props) {
-  return {props.event};
+  return props.event;
 }
+
+export default EventName;
