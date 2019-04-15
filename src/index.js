@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import CalculationArea from './CalculationArea';
-// import App from './App';
+import Splitter from './Splitter';
 
 
 let friends = [
@@ -13,4 +12,4 @@ let friends = [
   { name: 'Boris', payt: 700 },
 ];
 
-ReactDOM.render(<CalculationArea friends={friends} event='Kinky party'/>, document.getElementById('root'));
+ReactDOM.render(<Splitter /> , document.getElementById('root'));
