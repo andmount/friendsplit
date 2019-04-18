@@ -13,7 +13,7 @@ function AddFriendForm(props) {
           required
          />
       </label>
-      <br />
+  
       <label>
         Name:
         <input
@@ -24,7 +24,7 @@ function AddFriendForm(props) {
           required
          />
       </label>
-      <br />
+      
       <label>
         Payment:
         <input
@@ -36,8 +36,9 @@ function AddFriendForm(props) {
           required
          />
       </label>
-      <br />
+     
       <input
+        className='submit'
         type='submit'
         value='Add Friend'
       />

@@ -55,5 +55,8 @@ class Splitter extends React.Component {
     );
   }
 }
+function validate() {
+  
+}
 
 export default Splitter;

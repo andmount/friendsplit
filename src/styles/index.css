@@ -1,0 +1,77 @@
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+}
+
+/* Header start*/
+
+header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #999;
+}
+
+.logo {
+  width: 35%;
+  margin: 0 0 0 20px;
+}
+
+/* header end */
+
+/* Content area start */
+
+.container {
+  display: flex;
+}
+
+/* Form */
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  height: 300px;
+}
+
+input {
+  width: 250px;
+  height: 30px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
+.submit {
+  width: 150px;
+  height: 40px;
+  color: white;
+  background-color: #3FB2E7;
+  border: none;
+}
+
+.submit:hover {
+  background-color: #F8BC16;
+}
+
+
+
+/* Footer start */
+
+footer {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #999;
+}
+
+footer p {
+  margin: 0 0 0 20px;
+} 
+
+.joe {
+  width: 100px;
+}
+
