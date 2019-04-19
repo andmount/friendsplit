@@ -5,7 +5,12 @@ function ResultOfSplitting(props) {
   const listOfTransactions = transactions.map((transaction, index) =>
     <li key={index}>{transaction}</li>  
   );
-  return <ul className="transactions">{listOfTransactions}</ul>;
+  return (
+    <div className="resultofsplitting">
+      <h2>Result of Splitting</h2>
+      <ul className="transactions">{listOfTransactions}</ul>
+    </div>
+  );
 }
 
 function friendsToTransactions(friends) {

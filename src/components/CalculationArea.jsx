@@ -6,7 +6,6 @@ function CalculationArea(props) {
   return (
     <div className="calculationarea">
       <InformationTable friends={props.friends} event={props.event} />
-      <hr/>
       <ResultOfSplitting friends={props.friends} />
     </div>
   );

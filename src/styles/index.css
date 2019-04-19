@@ -3,7 +3,20 @@
 
 body {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+h2 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin: 0 0 10px 0;
 }
 
 /* Header start*/
@@ -12,7 +25,7 @@ header {
   display: flex;
   align-items: center;
   height: 60px;
-  background-color: #999;
+  border-bottom: 3px solid #3FB2E7;
 }
 
 .logo {
@@ -26,6 +39,7 @@ header {
 
 .container {
   display: flex;
+  background-color: #eee; 
 }
 
 /* Form */
@@ -34,14 +48,34 @@ form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
+  align-items: center;
   height: 300px;
+  width: 33%;
+  background-color: #eee; 
 }
 
+/* label {
+  margin: 0 0 0 20px;
+} */
+
 input {
-  width: 250px;
+  width: 300px;
   height: 30px;
   border: 1px solid #aaa;
   border-radius: 3px;
+}
+
+.event {
+  margin: 0 0 0 15px;
+}
+
+.namefriend {
+  margin: 0 0 0 13px;
+}
+
+.payt {
+  width: 277px;
+  margin: 0 0 0 15px;
 }
 
 .submit {
@@ -50,11 +84,29 @@ input {
   color: white;
   background-color: #3FB2E7;
   border: none;
+  align-self: center;
 }
 
 .submit:hover {
   background-color: #F8BC16;
 }
+
+/* Calculation area start */
+.calculationarea {
+  display: flex;
+  width: 66%;
+}
+
+.informationtable {
+  background-color: white; 
+  width: 50%;
+}
+
+.resultofsplitting {
+  width: 50%;
+  background-color: #eee;
+}
+
 
 
 
@@ -64,7 +116,8 @@ footer {
   display: flex;
   align-items: center;
   height: 60px;
-  background-color: #999;
+  border-top: 3px solid #3FB2E7;
+  border-bottom: 3px solid #3FB2E7;
 }
 
 footer p {
@@ -73,5 +126,6 @@ footer p {
 
 .joe {
   width: 100px;
+  margin: 1px 0 0 0;
 }
 

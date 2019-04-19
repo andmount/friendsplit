@@ -4,8 +4,9 @@ function AddFriendForm(props) {
   return (
     <form onSubmit={props.handleSubmit}>
       <label>
-        Event:
+        Event
         <input
+          className='event'
           name='nameOfEvent'
           type='text'
           value={props.nameOfEvent}
@@ -15,8 +16,9 @@ function AddFriendForm(props) {
       </label>
   
       <label>
-        Name:
+        Name
         <input
+          className='namefriend'
           name='nameOfFriend'
           type='text'
           value={props.nameOfFriend}
@@ -26,8 +28,9 @@ function AddFriendForm(props) {
       </label>
       
       <label>
-        Payment:
+        Payment
         <input
+          className='payt'
           name='payt'
           type='number'
           value={props.payt}
