@@ -12,7 +12,14 @@ function App(props) {
     <Splitter />
     <footer>
       <p>
-        Andrey Nagorniy 2019 | <a href="https://github.com/andmount/friendsplit">Repo</a>
+        Andrey Nagorniy 2019 | <a
+          className='repo'
+          href="https://github.com/andmount/friendsplit"
+          target='_blank'
+          rel='noreferrer noopener'
+        >
+          Repo
+        </a>
       </p>
       <img className='joe' src={joe} alt='joe-staring'/>
     </footer>
