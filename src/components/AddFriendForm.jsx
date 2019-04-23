@@ -1,8 +1,13 @@
 import React from 'react';
 
 function AddFriendForm(props) {
+  const errors = props.errors;
+
   return (
     <form onSubmit={props.handleSubmit}>
+      {errors.map(error =>
+        <p key={error}>{error}</p>
+      )}
       <label>
         Event
         <input
@@ -11,7 +16,6 @@ function AddFriendForm(props) {
           type='text'
           value={props.nameOfEvent}
           onChange={props.handleChange}
-          required
          />
       </label>
   
@@ -23,7 +27,6 @@ function AddFriendForm(props) {
           type='text'
           value={props.nameOfFriend}
           onChange={props.handleChange}
-          required
          />
       </label>
       
@@ -35,8 +38,6 @@ function AddFriendForm(props) {
           type='number'
           value={props.payt}
           onChange={props.handleChange}
-          min='1'
-          required
          />
       </label>
      

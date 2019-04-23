@@ -9,7 +9,8 @@ class Splitter extends React.Component {
       nameOfEvent: '',
       nameOfFriend: '',
       payt: '',
-      friends: [] 
+      friends: [],
+      errors: []
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,17 +26,27 @@ class Splitter extends React.Component {
   }
 
   handleSubmit(event) {
-    const friends = this.state.friends;
-    const name = this.state.nameOfFriend;
-    const payt = this.state.payt;
+    event.preventDefault();
+
+    const { nameOfFriend, nameOfEvent, payt, friends } = this.state;
+    // const friends = this.state.friends;
+    // const name = this.state.nameOfFriend;
+    // const payt = this.state.payt;
+    const errors = validate(nameOfEvent, nameOfFriend, payt);
+    if (errors.length > 0) {
+      this.setState({ errors });
+      return;
+    }
+
     this.setState({
-      friends: friends.concat([{ name: name, payt: +payt}])
+      friends: friends.concat([{ name: nameOfFriend, payt: +payt}])
     });
     this.setState({
       nameOfFriend: '',
-      payt: ''
+      payt: '',
+      errors: []
     });
-    event.preventDefault();
+    
   }
 
   render() {
@@ -46,6 +57,7 @@ class Splitter extends React.Component {
           handleSubmit={this.handleSubmit}
           payt={this.state.payt}
           nameOfFriend={this.state.nameOfFriend}
+          errors={this.state.errors}
         />
         <CalculationArea 
           event={this.state.nameOfEvent}
@@ -55,8 +67,28 @@ class Splitter extends React.Component {
     );
   }
 }
-function validate() {
-  
+
+
+function validate(nameOfEvent, nameOfFriend, payt) {
+  const errors = [];
+
+  if (nameOfEvent.length === 0) {
+    errors.push("❌ Name of event can't be empty");
+  }
+
+  if (nameOfFriend.length === 0) {
+    errors.push("❌ Name of friend can't be empty");
+  }
+
+  if (!(isNaN(parseInt(nameOfFriend)))) {
+    errors.push("❌ Name of friend can't start from digit");
+  }
+
+  if (payt === '' || payt === '0') {
+    errors.push("❌ Payment must be more than '0'");
+  }
+
+  return errors;
 }
 
 export default Splitter;
