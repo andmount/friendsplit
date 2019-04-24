@@ -11,10 +11,12 @@ class Splitter extends React.Component {
       payt: '',
       friends: [],
       errors: [],
-      isEventInputDisabled: false
+      isEventInputDisabled: false,
     };
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleInputChange(event) {
@@ -45,8 +47,18 @@ class Splitter extends React.Component {
       payt: '',
       errors: [],
       isEventInputDisabled: true
+    }); 
+  }
+
+  handleReset() {
+    this.setState({
+      nameOfEvent: '',
+      nameOfFriend: ''  ,
+      payt: '',
+      friends: [],
+      errors: [],
+      isEventInputDisabled: false,
     });
-    
   }
 
   render() {
@@ -55,6 +67,7 @@ class Splitter extends React.Component {
         <AddFriendForm
           handleChange={this.handleInputChange}
           handleSubmit={this.handleSubmit}
+          handleReset={this.handleReset}
           payt={this.state.payt}
           nameOfFriend={this.state.nameOfFriend}
           errors={this.state.errors}

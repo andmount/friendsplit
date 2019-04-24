@@ -41,12 +41,17 @@ function AddFriendForm(props) {
           onChange={props.handleChange}
          />
       </label>
-     
-      <input
-        className='submit'
-        type='submit'
-        value='Add Friend'
-      />
+
+      <div className='buttons'>
+        <input
+          className='submit'
+          type='submit'
+          value='Add Friend'
+        />
+        <button type='reset' className='reset' onClick={props.handleReset}>
+          Reset
+        </button>
+      </div>
     </form>
   );
 }
