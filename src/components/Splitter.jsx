@@ -29,10 +29,8 @@ class Splitter extends React.Component {
     event.preventDefault();
 
     const { nameOfFriend, nameOfEvent, payt, friends } = this.state;
-    // const friends = this.state.friends;
-    // const name = this.state.nameOfFriend;
-    // const payt = this.state.payt;
-    const errors = validate(nameOfEvent, nameOfFriend, payt);
+    const errors = validate(nameOfEvent, nameOfFriend, payt, friends);
+
     if (errors.length > 0) {
       this.setState({ errors });
       return;
@@ -69,7 +67,7 @@ class Splitter extends React.Component {
 }
 
 
-function validate(nameOfEvent, nameOfFriend, payt) {
+function validate(nameOfEvent, nameOfFriend, payt, friends) {
   const errors = [];
 
   if (nameOfEvent.length === 0) {
@@ -78,6 +76,10 @@ function validate(nameOfEvent, nameOfFriend, payt) {
 
   if (nameOfFriend.length === 0) {
     errors.push("❌ Name of friend can't be empty");
+  }
+
+  if (friends.filter(friend => friend.name === nameOfFriend).length > 0) {
+    errors.push("❌ This name of friend already exist");
   }
 
   if (!(isNaN(parseInt(nameOfFriend)))) {
