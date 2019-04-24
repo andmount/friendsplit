@@ -95,6 +95,11 @@ input {
   margin: 0 0 0 15px;
 }
 
+.event:disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
 .namefriend {
   margin: 0 0 0 13px;
 }
