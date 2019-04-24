@@ -10,7 +10,8 @@ class Splitter extends React.Component {
       nameOfFriend: '',
       payt: '',
       friends: [],
-      errors: []
+      errors: [],
+      isEventInputDisabled: false
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,7 +43,8 @@ class Splitter extends React.Component {
     this.setState({
       nameOfFriend: '',
       payt: '',
-      errors: []
+      errors: [],
+      isEventInputDisabled: true
     });
     
   }
@@ -56,6 +58,7 @@ class Splitter extends React.Component {
           payt={this.state.payt}
           nameOfFriend={this.state.nameOfFriend}
           errors={this.state.errors}
+          isEventInputDisabled={this.state.isEventInputDisabled}
         />
         <CalculationArea 
           event={this.state.nameOfEvent}

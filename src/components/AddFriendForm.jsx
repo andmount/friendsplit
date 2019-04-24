@@ -16,6 +16,7 @@ function AddFriendForm(props) {
           type='text'
           value={props.nameOfEvent}
           onChange={props.handleChange}
+          disabled={props.isEventInputDisabled}
          />
       </label>
   
