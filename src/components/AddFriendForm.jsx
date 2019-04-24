@@ -43,11 +43,10 @@ function AddFriendForm(props) {
       </label>
 
       <div className='buttons'>
-        <input
-          className='submit'
-          type='submit'
-          value='Add Friend'
-        />
+        <button className='submit' type='submit'>
+          Add Friend
+        </button>
+        
         <button type='reset' className='reset' onClick={props.handleReset}>
           Reset
         </button>

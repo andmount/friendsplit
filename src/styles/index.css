@@ -109,16 +109,28 @@ input {
   margin: 0 0 0 15px;
 }
 
-.submit {
-  width: 150px;
+.buttons {
+  width: 357px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 160px;
   height: 40px;
   color: white;
   background-color: #3FB2E7;
   border: none;
+  border-radius: 3px;
 }
 
-.submit:hover {
+button:hover {
   background-color: #F8BC16;
+  cursor: pointer;
+}
+
+.reset:hover {
+  background-color: #E92B23;
 }
 
 /* Calculation area start */
