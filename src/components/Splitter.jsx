@@ -3,8 +3,8 @@ import AddFriendForm from './AddFriendForm';
 import CalculationArea from './CalculationArea';
 
 class Splitter extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       nameOfEvent: '',
       nameOfFriend: '',
@@ -20,8 +20,9 @@ class Splitter extends React.Component {
   }
 
   handleInputChange(event) {
-    const name = event.target.name;
-    const value = event.target.value;
+    const target = event.target;
+    const name = target.name;
+    const value = target.type === 'number' ? target.value : toCapitalize(target.value);
     
     this.setState({
       [name]: value
@@ -70,6 +71,7 @@ class Splitter extends React.Component {
           handleReset={this.handleReset}
           payt={this.state.payt}
           nameOfFriend={this.state.nameOfFriend}
+          nameOfEvent={this.state.nameOfEvent}
           errors={this.state.errors}
           isEventInputDisabled={this.state.isEventInputDisabled}
         />
@@ -102,11 +104,15 @@ function validate(nameOfEvent, nameOfFriend, payt, friends) {
     errors.push("❌ Name of friend can't start from digit");
   }
 
-  if (payt === '' || payt === '0') {
+  if (payt === '' || parseFloat(payt) === 0) {
     errors.push("❌ Payment must be more than '0'");
   }
 
   return errors;
+}
+
+function toCapitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export default Splitter;

@@ -65,7 +65,7 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 300px;
+  height: 300px;
   width: 33%;
   background-color: #eee; 
 }

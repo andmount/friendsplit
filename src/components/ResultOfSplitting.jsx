@@ -22,12 +22,14 @@ function friendsToTransactions(friends) {
   }));
   const debtors = debtorsAndCreditors.filter(friend => friend.payt < 0);
   const creditors = debtorsAndCreditors.filter(friend => friend.payt > 0);
-  const toCapitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);
   const transactions = [];
+
+  const formatNumber = number => parseFloat(Math.abs(number).toFixed(2));
 
   for (let i = 0; i < creditors.length; i++) {
     for (let j = 0; j < debtors.length; j++) {
       let transaction;
+
       if (creditors[i].payt === 0) {
         break;
       }
@@ -37,11 +39,11 @@ function friendsToTransactions(friends) {
       }
 
       if (Math.abs(debtors[j].payt) < creditors[i].payt) {
-        transaction = `${toCapitalize(debtors[j].name)} gives ${Math.abs(debtors[j].payt)} to ${toCapitalize(creditors[i].name)}`
+        transaction = `${debtors[j].name} gives ${formatNumber(debtors[j].payt)} to ${creditors[i].name}`
         creditors[i].payt = creditors[i].payt + debtors[i].payt
         debtors[j].payt = 0;
       } else {
-        transaction = `${toCapitalize(debtors[j].name)} gives ${Math.abs(creditors[i].payt)} to ${toCapitalize(creditors[i].name)}`
+        transaction = `${debtors[j].name} gives ${formatNumber(creditors[i].payt)} to ${creditors[i].name}`
         debtors[j].payt = debtors[j].payt + creditors[i].payt
         creditors[i].payt = 0;
       }
