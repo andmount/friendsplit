@@ -96,7 +96,7 @@ function validate(nameOfEvent, nameOfFriend, payt, friends) {
     errors.push("❌ Name of friend can't be empty");
   }
 
-  if (friends.filter(friend => friend.name === nameOfFriend).length > 0) {
+  if (friends.filter(friend => friend.name.toLowerCase() === nameOfFriend.toLowerCase()).length > 0) {
     errors.push("❌ This name of friend already exist");
   }
 

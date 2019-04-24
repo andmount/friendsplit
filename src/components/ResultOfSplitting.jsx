@@ -2,8 +2,8 @@ import React from 'react';
 
 function ResultOfSplitting(props) {
   const transactions = friendsToTransactions(props.friends);
-  const listOfTransactions = transactions.map((transaction, index) =>
-    <li key={index}>{transaction}</li>  
+  const listOfTransactions = transactions.map((transaction) =>
+    <li key={transaction}>{transaction}</li>  
   );
   return (
     <div className="resultofsplitting">
