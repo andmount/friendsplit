@@ -53,19 +53,5 @@ it('validations work right', () => {
   expect(validate(...data1)).toEqual(["❌ Name of event can't be empty", "❌ Name of friend can't be empty", "❌ Payment must be more than '0'"]);
   expect(validate(...data2)).toEqual(["❌ Name of friend can't start from digit", "❌ Payment must be more than '0'"]);
   expect(validate(...data3)).toEqual(["❌ This name of friend already exist"]);
-  expect(validate(...data4)).toEqual(['❌ Field "What for?" can\'t be empty']);
-});
-
-it('FriendsWhoPaid component work right', () => {
-  const div = document.createElement('div');
-  const output1 = <ul>
-    {friends1.map(friend => {
-      return <li key={friend.name}>{friend.name} paid {friend.payt} for {friend.whatfor}</li>
-    })}
-  </ul>
-
-  const output2 = <ul></ul>
-
-  expect(ReactDOM.render(<FriendsWhoPaid friends={friends1}/>, div)).toEqual(output1);
-  expect(<FriendsWhoPaid />).toEqual(output2);
-});  
+  expect(validate(...data4)).toEqual(["❌ \"What for?\" field can't be empty"]);
+}); 

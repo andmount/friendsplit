@@ -9,6 +9,7 @@ class Splitter extends React.Component {
       nameOfEvent: '',
       nameOfFriend: '',
       payt: '',
+      whatFor: '',
       friends: [],
       errors: [],
       isEventInputDisabled: false,
@@ -22,7 +23,7 @@ class Splitter extends React.Component {
   handleInputChange(event) {
     const target = event.target;
     const name = target.name;
-    const value = target.type === 'number' ? target.value : toCapitalize(target.value);
+    const value = name === 'whatFor' ? target.value : toCapitalize(target.value);
     
     this.setState({
       [name]: value
@@ -32,8 +33,8 @@ class Splitter extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    const { nameOfFriend, nameOfEvent, payt, friends } = this.state;
-    const errors = validate(nameOfEvent, nameOfFriend, payt, friends);
+    const { nameOfFriend, nameOfEvent, payt, whatFor, friends } = this.state;
+    const errors = validate(nameOfEvent, nameOfFriend, payt, whatFor, friends);
 
     if (errors.length > 0) {
       this.setState({ errors });
@@ -41,11 +42,12 @@ class Splitter extends React.Component {
     }
 
     this.setState({
-      friends: friends.concat([{ name: nameOfFriend, payt: +payt}])
+      friends: friends.concat([{ name: nameOfFriend, payt: +payt, whatFor}])
     });
     this.setState({
       nameOfFriend: '',
       payt: '',
+      whatFor: '',
       errors: [],
       isEventInputDisabled: true
     }); 
@@ -56,6 +58,7 @@ class Splitter extends React.Component {
       nameOfEvent: '',
       nameOfFriend: ''  ,
       payt: '',
+      whatFor: '',
       friends: [],
       errors: [],
       isEventInputDisabled: false,
@@ -72,6 +75,7 @@ class Splitter extends React.Component {
           payt={this.state.payt}
           nameOfFriend={this.state.nameOfFriend}
           nameOfEvent={this.state.nameOfEvent}
+          whatFor={this.state.whatFor}
           errors={this.state.errors}
           isEventInputDisabled={this.state.isEventInputDisabled}
         />
@@ -85,7 +89,7 @@ class Splitter extends React.Component {
 }
 
 
-function validate(nameOfEvent, nameOfFriend, payt, friends) {
+function validate(nameOfEvent, nameOfFriend, payt, whatFor, friends) {
   const errors = [];
 
   if (nameOfEvent.length === 0) {
@@ -106,6 +110,10 @@ function validate(nameOfEvent, nameOfFriend, payt, friends) {
 
   if (payt === '' || parseFloat(payt) === 0) {
     errors.push("❌ Payment must be more than '0'");
+  }
+
+  if (whatFor.length === 0) {
+    errors.push("❌ \"What for?\" field can't be empty");
   }
 
   return errors;

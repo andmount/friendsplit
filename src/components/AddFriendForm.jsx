@@ -42,6 +42,17 @@ function AddFriendForm(props) {
          />
       </label>
 
+      <label>
+        What for?
+        <input
+          className='whatfor'
+          name='whatFor'
+          type='text'
+          value={props.whatFor}
+          onChange={props.handleChange}
+         />
+      </label>
+
       <div className='buttons'>
         <button className='submit' type='submit'>
           Add Friend
