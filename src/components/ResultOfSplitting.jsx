@@ -55,4 +55,5 @@ function friendsToTransactions(friends) {
 }
 
 export default ResultOfSplitting;
+export { friendsToTransactions };
 

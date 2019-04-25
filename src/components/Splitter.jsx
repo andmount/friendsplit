@@ -116,3 +116,4 @@ function toCapitalize(string) {
 }
 
 export default Splitter;
+export { validate };
