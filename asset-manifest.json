@@ -1,5 +1,5 @@
 {
-  "main.css": "/friendsplit/static/css/main.c35d5c1a.chunk.css",
+  "main.css": "/friendsplit/static/css/main.881267c1.chunk.css",
   "main.js": "/friendsplit/static/js/main.6b7e233f.chunk.js",
   "main.js.map": "/friendsplit/static/js/main.6b7e233f.chunk.js.map",
   "runtime~main.js": "/friendsplit/static/js/runtime~main.6549dedd.js",
@@ -7,9 +7,9 @@
   "static/js/2.5661c722.chunk.js": "/friendsplit/static/js/2.5661c722.chunk.js",
   "static/js/2.5661c722.chunk.js.map": "/friendsplit/static/js/2.5661c722.chunk.js.map",
   "index.html": "/friendsplit/index.html",
-  "precache-manifest.782b957136570c69f631fb0794752d78.js": "/friendsplit/precache-manifest.782b957136570c69f631fb0794752d78.js",
+  "precache-manifest.af91d51ecabdd03ee214219adbe83871.js": "/friendsplit/precache-manifest.af91d51ecabdd03ee214219adbe83871.js",
   "service-worker.js": "/friendsplit/service-worker.js",
-  "static/css/main.c35d5c1a.chunk.css.map": "/friendsplit/static/css/main.c35d5c1a.chunk.css.map",
+  "static/css/main.881267c1.chunk.css.map": "/friendsplit/static/css/main.881267c1.chunk.css.map",
   "static/media/joe.png": "/friendsplit/static/media/joe.fd56dd65.png",
   "static/media/logo.png": "/friendsplit/static/media/logo.f91b800e.png"
 }

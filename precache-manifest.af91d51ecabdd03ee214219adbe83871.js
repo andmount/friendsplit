@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/friendsplit/static/js/runtime~main.6549dedd.js"
   },
   {
-    "revision": "7c842717459be49cf31a",
+    "revision": "be9663dfe2712c84150b",
     "url": "/friendsplit/static/js/main.6b7e233f.chunk.js"
   },
   {
@@ -20,11 +20,11 @@ self.__precacheManifest = [
     "url": "/friendsplit/static/js/2.5661c722.chunk.js"
   },
   {
-    "revision": "7c842717459be49cf31a",
-    "url": "/friendsplit/static/css/main.c35d5c1a.chunk.css"
+    "revision": "be9663dfe2712c84150b",
+    "url": "/friendsplit/static/css/main.881267c1.chunk.css"
   },
   {
-    "revision": "76784da978b33c73fd8a64eb64c0f8ee",
+    "revision": "94ca03f53cbb7903bd9cd22aa8ec3159",
     "url": "/friendsplit/index.html"
   }
 ];
